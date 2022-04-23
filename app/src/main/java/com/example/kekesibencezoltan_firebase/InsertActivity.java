@@ -23,7 +23,7 @@ public class InsertActivity  extends AppCompatActivity {
     private Button btnBack, btnAdd;
     private EditText editName, editCountry, editPopulation;
     private DatabaseReference dbRef;
-    private int cityCount = 0;
+    private int cityCount = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +35,7 @@ public class InsertActivity  extends AppCompatActivity {
         dbRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                cityCount = 1;
                 for (DataSnapshot child: dataSnapshot.getChildren()) { cityCount++; }
             }
 

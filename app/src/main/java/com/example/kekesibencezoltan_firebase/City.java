@@ -50,7 +50,8 @@ public class City {
 
     @Override
     public String toString() {
-        return "\nNév: " + name +
+        return "\n" + "Id: " + id +
+                ", Név: " + name +
                 ", Ország: " + country +
                 ", Lakosság: " + population;
     }
