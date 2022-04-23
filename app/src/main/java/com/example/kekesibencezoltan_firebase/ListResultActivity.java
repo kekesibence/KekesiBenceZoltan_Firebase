@@ -21,19 +21,35 @@ import java.util.List;
 public class ListResultActivity extends AppCompatActivity {
     private Button btnBackFromList;
     private TextView textViewCityList;
-    private List<City> cityList;
+    private DatabaseReference dbRef;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.list_result_activity);
         init();
-        DAOCity dao = new DAOCity();
-        cityList = dao.get();
-        Log.e("listResultActivity", "onCreate: " + cityList);
+        dbRef = FirebaseDatabase.getInstance().getReference("Cities");
+
         btnBackFromList.setOnClickListener(view -> {
             Intent backIntent = new Intent(this, MainActivity.class);
             startActivity(backIntent);
             finish();
+        });
+
+        dbRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot child: dataSnapshot.getChildren()) {
+                    Log.e("Response", "child of child: " + child.child("City"));
+                    City c = child.child("City").getValue(City.class);
+                    String baseText = textViewCityList.getText().toString();
+                    textViewCityList.setText(baseText + c.toString());
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Log.e("FireBaseError", "message: " + databaseError );
+            }
         });
     }
 

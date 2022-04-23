@@ -9,7 +9,8 @@ public class City {
     public City() {
     }
 
-    public City(String name, String country, int population) {
+    public City(int id, String name, String country, int population) {
+        this.id = id;
         this.name = name;
         this.country = country;
         this.population = population;
@@ -45,5 +46,12 @@ public class City {
 
     public void setPopulation(int population) {
         this.population = population;
+    }
+
+    @Override
+    public String toString() {
+        return "\nNév: " + name +
+                ", Ország: " + country +
+                ", Lakosság: " + population;
     }
 }
