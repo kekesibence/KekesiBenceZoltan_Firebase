@@ -6,8 +6,10 @@ public class City {
     private String country;
     private int population;
 
-    public City(int id, String name, String country, int population) {
-        this.id = id;
+    public City() {
+    }
+
+    public City(String name, String country, int population) {
         this.name = name;
         this.country = country;
         this.population = population;
