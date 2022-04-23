@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "489993177251",
+    "firebase_url": "https://androiddolgozat-varosok-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "androiddolgozat-varosok",
+    "storage_bucket": "androiddolgozat-varosok.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:489993177251:android:5b88d64e09d691e5521716",
+        "android_client_info": {
+          "package_name": "com.example.kekesibencezoltan_firebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "489993177251-o5m10vct3qi5gl1lots9u1573bo0j8nq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBJ-4XXmShL-hG6zmKEt4ygJWI5cDh4JmM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "489993177251-o5m10vct3qi5gl1lots9u1573bo0j8nq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
